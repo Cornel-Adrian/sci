@@ -4,30 +4,37 @@ import main.java.ro.sci.Host_device;
 
 import java.util.Scanner;
 
-public class Smart_lamp extends Host_device implements lamp {
+public class Smart_lamp extends Host_device implements electricity {
+
+    private static float elecCost = 5;
+    public boolean on = false;
+
+    String color;
 
     Scanner scanner = new Scanner(System.in);
 
-
-    @Override
     public int setBrightness() {
-        int brightness = ((scanner.nextInt()) );
+        int brightness = ((scanner.nextInt()));
         return brightness;
 
     }
 
-    @Override
     public String setColor() {
-        return null;
+        this.color = new String(scanner.next());
+        return color;
     }
 
-    @Override
-    public boolean turnOn() {
-        return true;
+    public Boolean turnOn() {
+        elecCost = 5;
+        return on = true;
     }
 
-    @Override
-    public boolean turnOff() {
-        return false;
+    public Boolean turnOff() {
+        elecCost = 0;
+        return on = false;
+    }
+
+    public boolean isOn() {
+        return on;
     }
 }

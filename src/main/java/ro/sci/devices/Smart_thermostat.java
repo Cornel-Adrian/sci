@@ -2,20 +2,34 @@ package main.java.ro.sci.devices;
 
 import main.java.ro.sci.Host_device;
 
-public class Smart_thermostat extends Host_device implements thermostat {
+import java.util.Scanner;
 
-    public int setTemperature() {
-        return 0;
+public class Smart_thermostat extends Host_device {
+
+    public int temperature;
+    public boolean on;
+    private static float elecCost = 3;
+
+    Scanner scanner = new Scanner(System.in);
+
+    public void setTemperature() {
+        this.temperature = scanner.nextInt();
     }
 
 
-    @Override
     public boolean turnOn() {
-        return true;
+        this.elecCost = 3;
+        return on = true;
     }
 
-    @Override
+
     public boolean turnOff() {
-        return false;
+        this.elecCost = 0;
+        return on = false;
     }
+
+    public boolean isOn() {
+        return on;
+    }
+
 }
