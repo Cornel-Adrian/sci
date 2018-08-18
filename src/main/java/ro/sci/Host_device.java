@@ -1,12 +1,19 @@
 package main.java.ro.sci;
 
-public abstract class Host_device {
+public class Host_device {
 
 
     int elec_comsumption = 0;
+    boolean turnOn;
 
-    public abstract boolean turnOn();
-    public abstract boolean turnOff();
+    public boolean turnOn()
+    {
+       return turnOn = true;
+    }
+    public boolean turnOff()
+    {
+       return turnOn = false;
+    }
 
     public int getElec_comsumption() {
         return elec_comsumption;
